@@ -1,26 +1,16 @@
-# express-fileupload
-Simple express middleware for uploading files.
+# @jakkunight/express-fileupload
+A fork of [@richardgirges](https://github.com/richardgirges/express-fileupload) express-fileupload project!
 
-[![npm](https://img.shields.io/npm/v/express-fileupload.svg)](https://www.npmjs.org/package/express-fileupload)
-[![downloads per month](http://img.shields.io/npm/dm/express-fileupload.svg)](https://www.npmjs.org/package/express-fileupload)
-[![CircleCI](https://circleci.com/gh/richardgirges/express-fileupload/tree/master.svg?style=svg)](https://circleci.com/gh/richardgirges/express-fileupload/tree/master)
-[![Coverage Status](https://img.shields.io/coveralls/richardgirges/express-fileupload.svg)](https://coveralls.io/r/richardgirges/express-fileupload)
-
-# Help us Improve express-fileupload
-This package is still very much supported and maintained. But the more help the better. If you're interested any of the following:
-* Ticket and PR triage
-* Feature scoping and implementation
-* Maintenance (upgrading packages, fixing security vulnerabilities, etc)
-
-...please contact richardgirges '-at-' gmail.com
+# Why this fork?
+express-fileupload used to also parse multipart/formdata content, even if a file wasn't uploaded. Nowdays, the package introduced a middleware that checks for files into the `req` object and doesn't parse the request or adds an empty `body`. So I made this fork to keep the security updates, but removing that check middleware.
 
 # Install
 ```bash
 # With NPM
-npm i express-fileupload
+npm i @jakkunight/express-fileupload
 
 # With Yarn
-yarn add express-fileupload
+yarn add @jakkunight/express-fileupload
 ```
 
 # Usage
@@ -123,8 +113,5 @@ parseNested | <ul><li><code>false</code>&nbsp;**(default)**</li><li><code>true</
 debug | <ul><li><code>false</code>&nbsp;**(default)**</li><li><code>true</code></ul> | Turn on/off upload process logging. Can be useful for troubleshooting.
 uploadTimeout | <ul><li><code>60000</code>&nbsp;**(default)**</li><li><code>Integer</code></ul> | This defines how long to wait for data before aborting. Set to 0 if you want to turn off timeout checks.
 
-# Help Wanted
-Looking for additional maintainers. Please contact `richardgirges [ at ] gmail.com` if you're interested. Pull Requests are welcome! 
-
 # Thanks & Credit
-[Brian White](https://github.com/mscdex) for his stellar work on the [Busboy Package](https://github.com/mscdex/busboy) and the [connect-busboy Package](https://github.com/mscdex/connect-busboy)
+[Brian White](https://github.com/mscdex) for his stellar work on the [Busboy Package](https://github.com/mscdex/busboy) and the [connect-busboy Package](https://github.com/mscdex/connect-busboy) and [@richardgirges](https://github.com/richardgirges) for supporting the package
